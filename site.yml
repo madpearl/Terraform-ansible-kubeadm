@@ -1,0 +1,14 @@
+---
+
+- name: Install Kubernetes master
+  hosts: all
+  remote_user: "{{ ansible_remote_user }}"
+  gather_facts: False
+  become: yes
+  become_method: sudo
+  roles:
+    - docker
+    - kubeadm
+    - all
+
+
